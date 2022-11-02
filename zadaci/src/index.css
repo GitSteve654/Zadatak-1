@@ -1,0 +1,103 @@
+/*--Initial----------------------------------------------------------------------------------------------------------------------------------------*/
+body{
+    background-image:linear-gradient(rgb(85,70,255),rgb(80,65,255));
+    background-color:rgb(85,70,255);
+    font-family:"Arial";
+    user-select:none;
+    overflow:hidden;
+    height:100vh;
+    padding:0px;
+    margin:0px;
+}
+.app-holder{
+    position:absolute;
+    height:100%;
+    width:100%;
+    left:0px;
+    top:0px;
+}
+.app-head{
+    box-shadow:0px 0px 1vh rgba(0,0,0,0.2);
+    position:absolute;
+    height:8vh;
+    width:100%;
+    z-index:1;
+    left:0px;
+    top:0px;  
+}
+.app-body{
+    background-image:linear-gradient(rgb(80,65,250),rgb(75,60,250));
+    background-color:rgb(80,65,250);
+    position:absolute;
+    height:92vh;
+    width:100%;
+    z-index:0;
+    left:0px;
+    top:8vh;
+}
+
+/*--Header-----------------------------------------------------------------------------------------------------------------------------------------*/
+.header-title{
+    color:rgb(255,255,255);
+    justify-content:center;
+    align-items:center;
+    position:absolute;
+    font-weight:bold;
+    font-size:5vh;
+    display:flex;
+    height:100%;
+    width:20vh;
+    left:0px;
+    top:0px;
+}
+.header-button-holder{
+    justify-content:center;
+    align-items:center;
+    position:absolute;
+    padding-right:1vh;
+    padding-left:2vh;
+    display:flex;
+    height:100%;
+    right:0px;
+    top:0px;
+}
+.header-button{
+    -webkit-tap-highlight-color:transparent;
+    background-position:center center;
+    background-repeat:no-repeat;
+    transform:translateY(0px);
+    background-size:70%;
+    border-radius:100%;
+    margin-right:1vh;
+    cursor:pointer;
+    height:6vh;
+    width:6vh;
+}
+@media(hover:hover){
+    .header-button:hover{
+        background-color:rgb(100,85,255);
+        transform:translateY(-1px);
+        transition:ease-in 0.1s;
+    }
+}
+.header-button:active{
+    background-color:rgb(70,55,245);
+    transform:translateY(1px);
+    transition:ease-out 25ms;
+}
+.add-button{
+    background-image:url("./images/add.png");
+}
+.remove-button{
+    background-image:url("./images/remove.png");
+}
+
+/*--Animations-------------------------------------------------------------------------------------------------------------------------------------*/
+@keyframes fadeIn{
+    from {opacity:0;}
+    to {opacity:1;}
+}
+@keyframes fadeOut{
+    from {opacity:1;}
+    to {opacity:0;}
+}
