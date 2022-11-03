@@ -43,8 +43,6 @@ function App(){
         else showChange(id);
     }
     
-
-
     return(
         <div className="appHolder">
             <div className="appHead">

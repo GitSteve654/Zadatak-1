@@ -1,0 +1,19 @@
+Kako bih uradio manjenje redosleda zadataka:
+
+Posto postoji div koji obmotava svaki pojedinacni zadatak dodao bih jos jedan bool u listu zadataka "selected"
+Ako je on netacan onda ce zadatak biti prikazan normalno
+Ako je tacan onda bi ga ucinio nevidljivim, ali bi div koji ga obmotava ostavio aktivnim
+To bi dalo efekat rupe na mestu gde bi on trebao da bude
+Dodao bih event listener za mousedown ili touchstart na svaki zadatak koji bi aktivirao selected bool
+Onda bih uzeo jos jedan poseban <ToDo>. On bi efektivno bio isti kao i svaki sa jednom glavnom razlikom
+Njegov postion ce biti apsolutan a x i y koordinatece biti koordinate klik eventa
+I na kraju bih, u funciji mousedown ili touchstart , dodao event listenere za mousedown, mousemove, mouseup kao i iste te za touch za mobilne uredjaje
+U move eventu cu samo ponovo uzimati koordinate misa ili prsta i namestiti da posebni <ToDo> ima iste x i y koordinate
+Naravno tom zadatku bi bile prosledjenje sve potrebne promenljive na mousedownu
+Zatim kako pomeramo taj zadatak racunacemo u zavisnosti od x i y coordinata ge se on nalazi u odnosu na ostale. Npr ako prevucemo iznad prvog zadatka da se selectovani 
+zadatak treba prebaciti na prvo mesto. Onda u zavisnosti od toga cemo sortirati listu Zadataka.
+Tako dobijamo sledeci efekat. Kada se klikne na neki zadatak na njegovom mestu ostaje rupa a ispod misa se pojavi taj zadatak.
+Kako pomeramo mis ili prst zadatak ga prati a rupa se isto pomera tako da prati gde ce se zadatak spustiti.
+Na mouseup ili mouseleave (isto i za touch) mi sakrivamo posebni <ToDo> a do tada nevidljivom zadatak menjamo selected u false cime ga cinimo ponovo vidljivim
+Na samom kraju cuvamo novu listu u memoriju da bi redosled ostao promenjen posle refresha.
+ 
