@@ -26,7 +26,7 @@ function ToDo(props){
                 </div>
             </div>  
             <div className={classes.deleteButtonHolder}>
-                <div className="roundButton deleteButton"></div>
+                <div className="roundButton deleteButton" onClick={()=>{props.deleteF(props.list,props.data.id)}}></div>
             </div>
         </div>
         </div>

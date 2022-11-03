@@ -17,6 +17,11 @@ function App(){
         else list[id].done = false;
         setList([...list]);
     }
+    function deleteToDo(list,id){
+        list.splice(id,1);
+        for(let i = id; i < list.length; i++) list[i].id = i;
+        setList([...list]);
+    }
     return(
         <div className="appHolder">
             <div className="appHead">
@@ -29,10 +34,11 @@ function App(){
                 <div className="toDoHolder">
                     {!list.length && <div className="noToDos">Nemate nijedan zadatak!</div>}
                     {list.map((toDo)=>{
-                        return <ToDo checkF={checkBox} list={list} key={toDo.id} data={toDo}/>;
+                        return <ToDo checkF={checkBox} deleteF={deleteToDo} list={list} key={toDo.id} data={toDo}/>;
                     })}
                 </div>
             </div>
+            
         </div>
     );
 }
