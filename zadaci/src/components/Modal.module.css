@@ -7,7 +7,7 @@
     top:0px;
 }
 .modalMask{
-    background-color:rgba(0,0,0,0.3);
+    background-color:rgba(0,0,0,0.5);
     position:absolute;
     height:100%;
     width:100%;
@@ -56,12 +56,14 @@ input[type=text]{
     color:rgb(100,100,100);
     font-family:"Inter";
     border-radius:0.5vh;
+    font-size:1.8vh;
     width:90%;
 }
 input[type=date]{
     color:rgb(100,100,100);
     font-family:"Inter";
     border-radius:0.5vh;
+    font-size:1.8vh;
     width:90%;
 }
 select{
@@ -69,6 +71,7 @@ select{
     color:rgb(100,100,100);
     font-family:"Inter";
     border-radius:0.5vh;
+    font-size:1.8vh;
     width:90%;
 }
 .modalButton{

@@ -47,8 +47,6 @@
     width:50%;
 }
 
-
-
 .mainTitle{
     justify-content:flex-start;
 }
@@ -89,7 +87,6 @@
     width:100%;
 }
 
-
 .toDoDataHolder{
     aspect-ratio:1.2;
     height:100%;
@@ -100,6 +97,7 @@
     color:rgb(150,150,150);
     justify-content:center;
     align-items:center;
+    font-size:1.8vh;
     display:flex;
     height:50%;
     width:100%;
@@ -107,6 +105,7 @@
 .priority{
     border:0.25vh solid rgb(180,180,180);
     border-radius:1vh;
+    font-size:1.8vh;
     height:60%;
     width:80%;
 }

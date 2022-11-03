@@ -22,9 +22,9 @@ function App(){
         let date = new Date();
         let day = JSON.stringify(date.getDate()).padStart(2,"0");
         let month = JSON.stringify(date.getMonth()+1).padStart(2,"0");
-        let dateString = day+"/"+month+"/"+date.getFullYear();
+        let dateString = date.getFullYear()+"-"+month+"-"+day;
         let newToDo = {id:list.length, title:"Naziv", desc:"Opis", due:dateString, priority:0, done:false};
-        localStorage.setItem("toDos",JSON.stringify([...list,newToDo]));
+       
         setList([...list,newToDo]);
     }
     function checkBox(list,id){
@@ -39,8 +39,23 @@ function App(){
         setList([...list]);
     }
     function openModal(id){
-        if(showModal != -1) showChange(-1);
+        if(showModal !== -1) showChange(-1);
         else showChange(id);
+    }
+    function saveChange(data){
+        let newPriority;
+        if(data.newPriority === "nizak") newPriority = 0;
+        else if(data.newPriority === "srednji") newPriority = 1;
+        else newPriority = 2;
+
+        list[data.id].priority = newPriority;
+        list[data.id].title = data.newTitle;
+        list[data.id].desc = data.newDesc;
+        list[data.id].due = data.newDate;
+
+        localStorage.setItem("toDos",JSON.stringify([...list,newToDo]));
+        setList([...list]);
+        showChange(-1);
     }
     
     return(
@@ -59,7 +74,7 @@ function App(){
                     })}
                 </div>
             </div>
-            {showModal != -1 && <Modal modalF={openModal} list={list} id={showModal}/>}
+            {showModal !== -1 && <Modal saveF={saveChange} modalF={openModal} list={list} id={showModal}/>}
         </div>
     );
 }
