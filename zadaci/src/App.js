@@ -1,26 +1,30 @@
 import ToDo from "./components/ToDo";
-
-let toDos = [
-    {id:0,title:"Naziv 1",desc:"Ovo je nekakav opis prvog zadatka blablablabla",due:"11/03/2022",priority:0,done:false},
-    {id:1,title:"Naziv 2",desc:"Opis 2",due:"11/03/2022",priority:1,done:false},
-    {id:2,title:"Naziv 3",desc:"Opis 3",due:"11/03/2022",priority:2,done:true},
-    {id:3,title:"Naziv 4",desc:"Opis 4",due:"11/03/2022",priority:0,done:false},
-    {id:4,title:"Naziv 5",desc:"Opis 5",due:"11/03/2022",priority:0,done:false},
-    {id:6,title:"Naziv 6",desc:"Opis 6",due:"11/03/2022",priority:2,done:false}
-];
+import {useState} from "react";
 
 function App(){
+    let toDos = [];
+
+    let [list, setList] = useState(toDos);
+    function newToDo(){
+        let date = new Date();
+        let day = JSON.stringify(date.getDate()).padStart(2,"0");
+        let month = JSON.stringify(date.getMonth()+1).padStart(2,"0");
+        let dateString = day+"/"+month+"/"+date.getFullYear();
+        let newToDo = {id:list.length, title:"Naziv", desc:"Opis", due:dateString, priority:0, done:false};
+        setList([...list,newToDo]);
+    }
     return(
         <div className="appHolder">
             <div className="appHead">
                 <div className="headerTitle">Zadaci</div>
                 <div className="headerButtonHolder">
-                    <div className="roundButton headerButton" onClick={()=>{console.log("nije zavrseno")}}></div>
+                    <div className="roundButton headerButton" onClick={newToDo}></div>
                 </div>
             </div>
             <div className="appBody">
                 <div className="toDoHolder">
-                    {toDos.map((toDo)=>{
+                    {!list.length && <div className="noToDos">Nemate nijedan zadatak!</div>}
+                    {list.map((toDo)=>{
                         return <ToDo key={toDo.id} data={toDo}/>;
                     })}
                 </div>

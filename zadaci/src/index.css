@@ -36,17 +36,11 @@ body{
     z-index:0;
     left:0px;
     top:8vh;
+    
 
     justify-content:center;
     align-items:flex-start;
     display:flex;
-}
-.toDoHolder{
-    justify-content:center;
-    align-items:flex-start;
-    flex-wrap:wrap;
-    display:flex;
-    padding:2vh;
 }
 
 /*--Header-----------------------------------------------------------------------------------------------------------------------------------------*/
@@ -76,6 +70,20 @@ body{
     width:8vh;
     right:0px;
     top:0px;
+}
+
+/*--Body-------------------------------------------------------------------------------------------------------------------------------------------*/
+.toDoHolder{
+    justify-content:center;
+    align-items:flex-start;
+    margin-bottom:6vh;
+    flex-wrap:wrap;
+    display:flex;
+    padding:2vh;
+}
+.noToDos{
+    color:rgb(255,255,255);
+    font-size:2vh;
 }
 
 /*--Buttons----------------------------------------------------------------------------------------------------------------------------------------*/
