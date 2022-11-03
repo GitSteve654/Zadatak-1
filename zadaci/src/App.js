@@ -24,19 +24,20 @@ function App(){
         let month = JSON.stringify(date.getMonth()+1).padStart(2,"0");
         let dateString = date.getFullYear()+"-"+month+"-"+day;
         let newToDo = {id:list.length, title:"Naziv", desc:"Opis", due:dateString, priority:0, done:false};
-       
         setList([...list,newToDo]);
+        localStorage.setItem("toDos",JSON.stringify([...list,newToDo]));
     }
     function checkBox(list,id){
         if(!list[id].done) list[id].done = true;
         else list[id].done = false;
-        localStorage.setItem("toDos",JSON.stringify([...list]));
         setList([...list]);
+        localStorage.setItem("toDos",JSON.stringify([...list]));
     }
     function deleteToDo(list,id){
         list.splice(id,1);
         for(let i = id; i < list.length; i++) list[i].id = i;
         setList([...list]);
+        localStorage.setItem("toDos",JSON.stringify(toDos));
     }
     function openModal(id){
         if(showModal !== -1) showChange(-1);
