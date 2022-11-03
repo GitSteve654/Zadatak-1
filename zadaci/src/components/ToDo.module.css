@@ -5,6 +5,7 @@
     display:flex;
     height:10vh;
     margin:2vh;
+    z-index:4;
 }
 .toDo{
     animation:popIn ease-in-out 0.2s;
@@ -118,7 +119,6 @@
    
 
 }
-
 
 @keyframes popIn{
     from {opacity:0; transform:scale(0);}

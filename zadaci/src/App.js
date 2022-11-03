@@ -1,3 +1,4 @@
+import MovingToDo from "./components/MovingToDo";
 import Modal from "./components/Modal";
 import ToDo from "./components/ToDo";
 import {useState} from "react";
@@ -17,27 +18,16 @@ function App(){
     }
     let [list, setList] = useState(toDos);
     let [showModal, showChange] = useState(-1);
+    let [showMovingData, showMovingToDo] = useState(null);
 
     function newToDo(){
         let date = new Date();
         let day = JSON.stringify(date.getDate()).padStart(2,"0");
         let month = JSON.stringify(date.getMonth()+1).padStart(2,"0");
         let dateString = date.getFullYear()+"-"+month+"-"+day;
-        let newToDo = {id:list.length, title:"Naziv", desc:"Opis", due:dateString, priority:0, done:false};
+        let newToDo = {id:list.length, title:"Naziv", desc:"Opis", due:dateString, priority:0, done:false, selected:false};
         setList([...list,newToDo]);
         localStorage.setItem("toDos",JSON.stringify([...list,newToDo]));
-    }
-    function checkBox(list,id){
-        if(!list[id].done) list[id].done = true;
-        else list[id].done = false;
-        setList([...list]);
-        localStorage.setItem("toDos",JSON.stringify([...list]));
-    }
-    function deleteToDo(list,id){
-        list.splice(id,1);
-        for(let i = id; i < list.length; i++) list[i].id = i;
-        setList([...list]);
-        localStorage.setItem("toDos",JSON.stringify(toDos));
     }
     function openModal(id){
         if(showModal !== -1) showChange(-1);
@@ -71,11 +61,20 @@ function App(){
                 <div className="toDoHolder">
                     {!list.length && <div className="noToDos">Nemate nijedan zadatak!</div>}
                     {list.map((toDo)=>{
-                        return <ToDo modalF={openModal} checkF={checkBox} deleteF={deleteToDo} list={list} key={toDo.id} data={toDo}/>;
+                        return <ToDo 
+                            showMoving={showMovingToDo}
+                            modalF={openModal} 
+                            setList={setList}
+                            special={false}
+                            key={toDo.id} 
+                            list={list} 
+                            data={toDo}
+                        />;
                     })}
                 </div>
             </div>
             {showModal !== -1 && <Modal saveF={saveChange} modalF={openModal} list={list} id={showModal}/>}
+            {showMovingData && <MovingToDo data={showMovingData}/>}
         </div>
     );
 }

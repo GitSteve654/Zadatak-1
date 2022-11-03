@@ -1,7 +1,7 @@
 /*--Initial----------------------------------------------------------------------------------------------------------------------------------------*/
 body{
-    background-image:linear-gradient(rgb(85,70,255),rgb(80,65,255));
-    background-color:rgb(85,70,255);
+    background-image:linear-gradient(rgb(80,65,250),rgb(75,60,250));
+    background-color:rgb(80,65,250);
     font-family:"Inter";
     user-select:none;
     overflow:hidden;
@@ -17,6 +17,7 @@ body{
     top:0px;
 }
 .appHead{
+    background-color:rgb(90,75,255);
     box-shadow:0px 0px 1vh rgba(0,0,0,0.2);
     position:absolute;
     height:8vh;
@@ -26,14 +27,12 @@ body{
     top:0px;  
 }
 .appBody{
-    background-image:linear-gradient(rgb(80,65,250),rgb(75,60,250));
-    background-color:rgb(80,65,250);
     position:absolute;
     overflow-x:hidden;
     overflow-y:auto;
     height:92vh;
     width:100%;
-    z-index:0;
+    z-index:2;
     left:0px;
     top:8vh;
     
@@ -59,7 +58,7 @@ body{
     top:0px;
 }
 .headerButtonHolder{
-    background-color:rgb(85,70,255);
+    background-color:rgb(90,75,255);
     justify-content:center;
     align-items:center;
     position:absolute;
@@ -79,7 +78,7 @@ body{
     margin-bottom:6vh;
     flex-wrap:wrap;
     display:flex;
-    padding:2vh;
+    margin:1vh;
 }
 .noToDos{
     color:rgb(255,255,255);
