@@ -1,5 +1,5 @@
 .checkMark{
-    animation:popIn ease-in-out 0.5s;
+    animation:popIn ease-in-out 0.2s;
     height:100%;
     width:100%;
 }
