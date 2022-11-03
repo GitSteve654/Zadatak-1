@@ -1,0 +1,102 @@
+.toDo{
+    box-shadow:0px 0px 1vh rgba(0,0,0,0.2);
+    -webkit-tap-highlight-color:transparent;
+    background-color:rgb(255,255,255);
+    width:min(60vh,calc(100vw - 4vh));
+    transform:translateY(0px);
+    border-radius:1vh;
+    cursor:pointer;
+    display:flex;
+    height:10vh;
+    padding:1vh;
+    margin:1vh;
+}
+.title{
+    color:rgb(85,70,230);
+    justify-content:center;
+    align-items:center;
+    font-weight:bold;
+    font-size:2vh;
+    display:flex;
+    height:3vh;
+    width:100%;
+}
+
+.checkHolder{
+    justify-content:flex-start;
+    align-items:center;
+    aspect-ratio:0.7;
+    display:flex;
+    height:100%;
+}
+.checkBox{
+    border:0.25vh solid rgb(180,180,180);
+    border-radius:100%;
+    aspect-ratio:1;
+    width:50%;
+}
+
+
+.mainTitle{
+    justify-content:flex-start;
+}
+.description{
+    word-wrap:break-word;
+}
+
+.mainHolder{
+    justify-content:center;
+    flex-direction:column;
+    align-items:center;
+    display:flex;
+    height:100%;
+    width:100%;
+}
+.mainHead{
+    font-family:"Inter Bold";
+    color:rgb(85,70,230);
+    overflow:hidden;
+    word-wrap:wrap;
+    max-height:50%;
+    font-size:2vh;
+    width:100%;
+}
+.mainBody{
+    color:rgb(150,150,150);
+    font-size:1.8vh;
+    overflow:hidden;
+    word-wrap:wrap;
+    max-height:50%;
+    width:100%;
+}
+
+
+.toDoDataHolder{
+    aspect-ratio:1.2;
+    height:100%;
+   
+}
+.toDoDataRow{
+    font-family:"Inter Bold";
+    color:rgb(150,150,150);
+    justify-content:center;
+    align-items:center;
+    display:flex;
+    height:50%;
+    width:100%;
+}
+.priority{
+    border:0.25vh solid rgb(180,180,180);
+    border-radius:1vh;
+    height:60%;
+    width:80%;
+}
+.deleteButtonHolder{
+    justify-content:center;
+    align-items:center;
+    aspect-ratio:1/2;
+    display:flex;
+    height:100%;
+   
+
+}

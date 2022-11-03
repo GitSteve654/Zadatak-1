@@ -2,21 +2,21 @@
 body{
     background-image:linear-gradient(rgb(85,70,255),rgb(80,65,255));
     background-color:rgb(85,70,255);
-    font-family:"Arial";
+    font-family:"Inter";
     user-select:none;
     overflow:hidden;
     height:100vh;
     padding:0px;
     margin:0px;
 }
-.app-holder{
+.appHolder{
     position:absolute;
     height:100%;
     width:100%;
     left:0px;
     top:0px;
 }
-.app-head{
+.appHead{
     box-shadow:0px 0px 1vh rgba(0,0,0,0.2);
     position:absolute;
     height:8vh;
@@ -25,19 +25,33 @@ body{
     left:0px;
     top:0px;  
 }
-.app-body{
+.appBody{
     background-image:linear-gradient(rgb(80,65,250),rgb(75,60,250));
     background-color:rgb(80,65,250);
     position:absolute;
+    overflow-x:hidden;
+    overflow-y:auto;
     height:92vh;
     width:100%;
     z-index:0;
     left:0px;
     top:8vh;
+
+    justify-content:center;
+    align-items:flex-start;
+    display:flex;
+}
+.toDoHolder{
+    justify-content:center;
+    align-items:flex-start;
+    flex-wrap:wrap;
+    display:flex;
+    padding:2vh;
 }
 
 /*--Header-----------------------------------------------------------------------------------------------------------------------------------------*/
-.header-title{
+.headerTitle{
+    font-family:"Inter Bolder";
     color:rgb(255,255,255);
     justify-content:center;
     align-items:center;
@@ -50,7 +64,8 @@ body{
     left:0px;
     top:0px;
 }
-.header-button-holder{
+.headerButtonHolder{
+    background-color:rgb(85,70,255);
     justify-content:center;
     align-items:center;
     position:absolute;
@@ -58,39 +73,46 @@ body{
     padding-left:2vh;
     display:flex;
     height:100%;
+    width:8vh;
     right:0px;
     top:0px;
 }
-.header-button{
+
+/*--Buttons----------------------------------------------------------------------------------------------------------------------------------------*/
+.roundButton{
     -webkit-tap-highlight-color:transparent;
     background-position:center center;
     background-repeat:no-repeat;
     transform:translateY(0px);
     background-size:70%;
     border-radius:100%;
-    margin-right:1vh;
+    aspect-ratio:1;
     cursor:pointer;
-    height:6vh;
-    width:6vh;
+    width:100%;
 }
+.headerButton{
+    background-image:url("./images/add.png");
+    margin:1vh;
+}
+.deleteButton{
+    background-image:url("./images/remove.png");
+}
+
 @media(hover:hover){
-    .header-button:hover{
-        background-color:rgb(100,85,255);
+    .roundButton:hover{
         transform:translateY(-1px);
         transition:ease-in 0.1s;
     }
+    .headerButton:hover{background-color:rgb(100,85,255)}
+    .deleteButton:hover{background-color:rgb(245,245,245)}
 }
-.header-button:active{
-    background-color:rgb(70,55,245);
+
+.roundButton:active{
     transform:translateY(1px);
     transition:ease-out 25ms;
 }
-.add-button{
-    background-image:url("./images/add.png");
-}
-.remove-button{
-    background-image:url("./images/remove.png");
-}
+.headerButton:active{background-color:rgb(70,55,245)}
+.deleteButton:active{background-color:rgb(235,235,235)}
 
 /*--Animations-------------------------------------------------------------------------------------------------------------------------------------*/
 @keyframes fadeIn{
@@ -100,4 +122,18 @@ body{
 @keyframes fadeOut{
     from {opacity:1;}
     to {opacity:0;}
+}
+
+/*--Fonts------------------------------------------------------------------------------------------------------------------------------------------*/
+@font-face{
+    font-family:"Inter";
+    src:url("./fonts/Inter-Regular.ttf");
+}
+@font-face{
+    font-family:"Inter Bold";
+    src:url("./fonts/Inter-Bold.ttf");
+}
+@font-face{
+    font-family:"Inter Bolder";
+    src:url("./fonts/Inter-ExtraBold.ttf");
 }

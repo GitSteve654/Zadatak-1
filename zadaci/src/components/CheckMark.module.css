@@ -1,0 +1,35 @@
+.checkMark{
+    animation:popIn ease-in-out 0.5s;
+    height:100%;
+    width:100%;
+}
+.checkSmall{
+    transform:translate(-0.7vh,1.5vh) rotate(45deg);
+    border-radius:1vh;
+    overflow:hidden;
+    height:1vh;
+    width:3vh;
+}
+.checkSmallBar{
+    background-color:rgb(0,200,50);
+    height:100%;
+    width:100%;
+}
+.checkBig{
+    transform:translate(0.8vh,0vh) rotate(-45deg);
+    border-radius:1vh;
+    overflow:hidden;
+    height:1vh;
+    width:4vh;
+}
+.checkBigBar{
+    background-color:rgb(0,200,50);
+    height:100%;
+    width:100%;
+}
+
+@keyframes popIn{
+    0% {transform:scale(0);}
+    80% {transform:scale(1.2);}
+    100% {transform:scale(1);}
+}
