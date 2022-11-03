@@ -53,9 +53,9 @@ function App(){
         list[data.id].desc = data.newDesc;
         list[data.id].due = data.newDate;
 
-        localStorage.setItem("toDos",JSON.stringify([...list,newToDo]));
-        setList([...list]);
         showChange(-1);
+        setList([...list]);
+        localStorage.setItem("toDos",JSON.stringify([...list]));
     }
     
     return(
